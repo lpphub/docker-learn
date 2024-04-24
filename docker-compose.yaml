@@ -77,7 +77,8 @@ services:
     command: "--default-authentication-plugin=mysql_native_password"
     volumes:
       - /root/mysql/data:/var/lib/mysql
-      # - /root/mysql/conf.d:/etc/mysql/conf.d
+      - /root/mysql/conf:/etc/mysql/conf.d
+      - /root/mysql/log:/var/log/mysql
     ports:
       - 3306:3306
     networks:
